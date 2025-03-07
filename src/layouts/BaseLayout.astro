@@ -1,7 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "../styles/global.css";
+import "../styles/global.scss"; // Keep this import!
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -14,12 +15,14 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <slot />
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
+    <div id="content">
+      <Header />
+      <h1>{pageTitle}</h1>
+      <slot />
+      <Footer />
+      <script>
+        import "../scripts/menu.js";
+      </script>
+    </div>
   </body>
 </html>

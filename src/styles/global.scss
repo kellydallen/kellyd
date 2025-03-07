@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+$font-sans: "DM Sans", sans-serif;
+$font-serif: "Alegreya", serif;
+$parchment: #faf9f6;
+$ink: #1a1a1a;
+
+body {
+  font-family: $font-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.8px;
+  font-size: 1.25rem;
+  background-color: $parchment;
+  color: $ink;
+}
+#content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+h1 {
+  font-family: $font-sans;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: -1px;
+}

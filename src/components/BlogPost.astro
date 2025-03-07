@@ -1,5 +1,23 @@
 ---
-const { title, url } = Astro.props;
+interface Props {
+  title: string;
+  postDate: Date;
+  url: string;
+  key?: string;
+}
+
+const { title, postDate, url } = Astro.props as Props;
+
+const date = new Date(postDate);
+const month = String(date.getMonth() + 1).padStart(2, "0");
+const day = String(date.getDate()).padStart(2, "0");
+const year = date.getFullYear();
+const formattedDate = `${month}-${day}-${year}`;
 ---
 
-<li><a href={url}>{title}</a></li>
+<li class="post-item">
+  <a href={url} class="post-link">
+    <span class="post-date">{formattedDate}</span>
+    <span class="post-title">{title}</span>
+  </a>
+</li>
