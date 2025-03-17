@@ -1,11 +1,19 @@
 ---
-import Navigation from "./Navigation.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+import { EMAIL } from "../consts";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header>
-  <nav>
-    <ThemeIcon />
-    <Navigation />
+<header class="mb-6 flex items-center justify-between" transition:name="header">
+  <nav class="flex items-center gap-4">
+    <a href="/"> home </a>
+    <a href="/posts"> posts </a>
+    <a href={`mailto:${EMAIL}`}>email</a>
   </nav>
+  <ThemeToggle />
 </header>
+
+<style>
+  a {
+    @apply font-medium text-zinc-500 hover:text-zinc-900 hover:underline dark:hover:text-zinc-100;
+  }
+</style>

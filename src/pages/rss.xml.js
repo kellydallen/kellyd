@@ -1,19 +1,16 @@
-import rss, { pagesGlobToRssItems } from "@astrojs/rss";
+import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 export async function GET(context) {
-  const posts = await getCollection("blog");
-
+  const posts = await getCollection("posts");
   return rss({
-    title: "Astro Learner | Blog",
-    description: "My journey learning Astro",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     site: context.site,
     items: posts.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      link: `/posts/${post.id}/`,
+      ...post.data,
+      link: `/posts/${post.slug}/`,
     })),
-    customData: `<language>en-us</language>`,
   });
 }
