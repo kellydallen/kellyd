@@ -7,9 +7,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Geist", ...defaultTheme.fontFamily.sans],
+        sans: ["ClashGrotesk", ...defaultTheme.fontFamily.sans],
+        serif: ["Sentient", ...defaultTheme.fontFamily.serif],
         mono: ["'Geist Mono'", ...defaultTheme.fontFamily.mono],
-        heading: ["Milligram", "sans-serif"],
+        heading: ["MilligramBold", ...defaultTheme.fontFamily.sans],
       },
     },
   },
