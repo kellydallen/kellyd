@@ -9,7 +9,7 @@ categories: ["about"]
 
 I'm David, also known as kelly d, an alias that came about primarily in an attempt to be more memorable (?) and a bit more Google-friendly.
 
-## Lightning Round on Me
+## Lightning Round
 
 - I am an always-learning web developer
 - I once wrote a personal bio for myself that was configured as a fill-in-the-blank Madlib

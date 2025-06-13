@@ -1,5 +1,5 @@
 ---
-title: "CV"
+title: "Resumé"
 description: "Experience, skills, schooling."
 date: "Jun 12 2025"
 categories: ["about"]
@@ -10,6 +10,8 @@ Front End Web Development, UI/UX
 Reston, VA | kellyd@kellyd.com | [linkedin.com/in/david-allen-kelly](http://linkedin.com/in/david-allen-kelly) | [kellyd.com](https://kellyd.com)
 
 ---
+
+[Download my resumé in PDF format](/kellyd_resume.pdf)
 
 ## Professional Summary
 
