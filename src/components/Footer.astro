@@ -1,3 +1,20 @@
+---
+import { getCollection } from "astro:content";
+
+// Get all posts and filter for projects
+const allPosts = await getCollection("posts");
+const projectPosts = allPosts
+  .filter((post) => post.slug.startsWith("projects/"))
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  );
+const wordPosts = allPosts
+  .filter((post) => post.slug.startsWith("words/"))
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  );
+---
+
 <footer
   class="items-left mx-auto mb-6 flex h-[20vh] flex-col gap-4 text-left md:flex-row md:items-start md:justify-center"
 >
@@ -16,10 +33,10 @@
       >BCKGRND
     </h2>
     <ul>
-      <li><a href="/posts/about">about</a></li>
-      <li><a href="/posts/resume">resumé</a></li>
-      <li><a href="/now">now</a></li>
-      <li><a href="/about">contact</a></li>
+      <li><a href="/posts/about">About</a></li>
+      <li><a href="/posts/resume">Resumé</a></li>
+      <li><a href="/now">Now</a></li>
+      <li><a href="/posts/contact">Contact</a></li>
     </ul>
   </div>
   <div class="w-96 p-4 md:text-left">
@@ -37,10 +54,13 @@
       >WRDS
     </h2>
     <ul>
-      <li><a href="/about">Item 1</a></li>
-      <li><a href="/about">Item 2</a></li>
-      <li><a href="/about">Item 3</a></li>
-      <li><a href="/about">Item 4</a></li>
+      {
+        wordPosts.map((post) => (
+          <li>
+            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
   <div class="w-96 p-4 md:text-left">
@@ -58,10 +78,13 @@
       >PRJCTS
     </h2>
     <ul>
-      <li><a href="/about">Item 1</a></li>
-      <li><a href="/about">Item 2</a></li>
-      <li><a href="/about">Item 3</a></li>
-      <li><a href="/about">Item 4</a></li>
+      {
+        projectPosts.map((project) => (
+          <li>
+            <a href={`/posts/${project.slug}`}>{project.data.title}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </footer>
