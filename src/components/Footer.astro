@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { EMAIL } from "../consts";
 
 // Get all posts and filter for projects
 const allPosts = await getCollection("posts");
@@ -16,7 +17,7 @@ const wordPosts = allPosts
 ---
 
 <footer
-  class="items-left mx-auto mb-6 flex h-[20vh] flex-col gap-4 text-left md:flex-row md:items-start md:justify-center"
+  class="items-left mx-auto mb-6 flex h-[25vh] flex-col gap-4 text-left md:flex-row md:items-start md:justify-center"
 >
   <div class="w-96 p-4 md:text-left">
     <h2 class="flex max-w-sm items-center font-heading text-xl">
@@ -32,11 +33,16 @@ const wordPosts = allPosts
         ></path></svg
       >BCKGRND
     </h2>
-    <ul>
-      <li><a href="/posts/about">About</a></li>
-      <li><a href="/posts/resume">Resumé</a></li>
-      <li><a href="/now">Now</a></li>
-      <li><a href="/posts/contact">Contact</a></li>
+    <ul class="font-mono text-sm uppercase">
+      <li><a href="/posts/about">about me</a></li>
+      <li><a href="/posts/resume">resumé</a></li>
+      <li><a href="/now">now</a></li>
+      <li><a href={`mailto:${EMAIL}`}>email</a></li>
+      <li>
+        <a target="_blank" href="https://www.linkedin.com/in/david-allen-kelly/"
+          >linkedin</a
+        >
+      </li>
     </ul>
   </div>
   <div class="w-96 p-4 md:text-left">
@@ -53,7 +59,7 @@ const wordPosts = allPosts
         ></path></svg
       >WRDS
     </h2>
-    <ul>
+    <ul class="font-mono text-sm uppercase">
       {
         wordPosts.map((post) => (
           <li>
@@ -77,11 +83,14 @@ const wordPosts = allPosts
         ></path></svg
       >PRJCTS
     </h2>
-    <ul>
+    <ul class="font-mono text-sm uppercase">
       {
         projectPosts.map((project) => (
           <li>
-            <a href={`/posts/${project.slug}`}>{project.data.title}</a>
+            <>
+              <a href={`/posts/${project.slug}`}>{project.data.title}</a>
+              <br />
+            </>
           </li>
         ))
       }
