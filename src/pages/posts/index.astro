@@ -4,10 +4,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../lib/utils";
 
-const collection = await getCollection("posts");
-const posts = collection.sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+const allPosts = await getCollection("posts");
+const posts = allPosts
+  .filter((post) => {
+    const categories = post.data.categories;
+    if (Array.isArray(categories)) {
+      return !categories.includes("astro") && !categories.includes("projects");
+    }
+    // If a post has no categories, we'll include it.
+    return true;
+  })
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>

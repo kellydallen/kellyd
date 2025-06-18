@@ -2,7 +2,7 @@
 title: "Customizing Miniblog"
 description: "How to customize the Miniblog blog theme."
 date: "Nov 26 2024"
-categories: ["projects"]
+categories: ["astro"]
 ---
 
 ## Blog Posts
