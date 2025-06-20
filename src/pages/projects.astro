@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro"; // Adjust path if necessary
+// import { formatDate } from "../lib/utils"; // Uncomment if you want to display dates
+
+// Fetch all posts from the 'posts' collection
+const allPosts = await getCollection("posts");
+
+// Filter for posts specifically located in the 'projects' directory
+// The slug includes the directory path relative to the collection root
+const projectPosts = allPosts
+  .filter((post) => post.slug.startsWith("projects/"))
+  // Sort in reverse chronological order (newest first)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const pageTitle = "Projects"; // Customize your page title
+const pageDescription = "A collection of my projects and work."; // Customize your page description
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main>
+    <h1
+      class="mb-4 mt-40 border-b-2 border-zinc-500 font-sans text-7xl font-thin uppercase tracking-tight md:-ml-16"
+    >
+      {pageTitle}
+    </h1>
+
+    {
+      projectPosts.length > 0 ? (
+        <ul class="space-y-2">
+          {projectPosts.map((post) => (
+            <li class="py-2">
+              <a href={`/posts/${post.slug}/`} class="inline-block">
+                <h2 class="flex text-xl font-semibold uppercase tracking-wide hover:underline">
+                  {/* <h2 class="mtb-1 text-xl font-light uppercase hover:underline"> */}
+                  <svg
+                    class="-ml-8 mr-2"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                    />
+                  </svg>
+                  {post.data.title}
+                </h2>
+
+                {/* Add project-specific details here, e.g., description, image */}
+                {/* <p class="text-zinc-700 mb-3">{post.data.description}</p> */}
+                {/* {post.data.image && <img src={post.data.image} alt="" class="w-full h-48 object-cover rounded mb-3" />} */}
+                {/* {formatDate && <p class="text-sm text-zinc-500">{formatDate(post.data.date)}</p>} */}
+              </a>
+              <p class="text-md prose font-normal text-zinc-600">
+                {post.data.description || "No description available."}
+              </p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="text-center text-zinc-600">No projects found yet.</p>
+      )
+    }
+  </main>
+</Layout>

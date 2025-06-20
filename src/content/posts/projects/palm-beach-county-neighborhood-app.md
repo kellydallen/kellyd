@@ -1,6 +1,6 @@
 ---
 title: "Palm Beach County Neighborhood Dashboard"
-description: "one of my favorite projects, and something i believe to be the best-in-class for info dashboards like this"
+description: "one of my favorite projects: a one-stop dashboard for address-specific information using a lot of arcgis javascript api. it shows government representatives (federal, state, and local), voting precinct locations, police and fire departments, emergency management status, evacuation zones, flood zones, school districts and representatives, current land use, permitting authorities, and water service providers, all specific to the user's address. it also provides 40+ live traffic cam feeds laid out across the county map."
 date: "Feb 01 2025"
 categories: ["projects"]
 ---
