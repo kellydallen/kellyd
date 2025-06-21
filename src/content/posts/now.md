@@ -1,6 +1,6 @@
 ---
 title: "Now"
-description: "The art, projects, hobbies, and just general great things I'm into right now."
+description: "Everything I'm into now whether it's a tv show, a book, a program or app, a game ... anything I would love to see get some more love or attention."
 date: "Jun 13 2025"
 categories: ["about"]
 ---

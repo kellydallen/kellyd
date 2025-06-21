@@ -1,6 +1,6 @@
 ---
 title: "About this Site"
-description: "background on the tech stack of this site and a bit about its history"
+description: "The background of this site, with some history mixed in, and some details about the latest update to Astro.js."
 date: "Jun 13 2025"
 categories: ["site"]
 ---

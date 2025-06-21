@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { formatDate } from "../lib/utils";
+
+// Fetch all posts from the 'posts' collection
+const allPosts = await getCollection("posts");
+
+// Filter for posts specifically located in the 'projects' directory
+// The slug includes the directory path relative to the collection root
+// const projectPosts = allPosts
+//   .filter((post) => post.slug.startsWith("projects/"))
+//   // Sort in reverse chronological order (newest first)
+//   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const posts = allPosts
+  .filter((post) => {
+    const categories = post.data.categories;
+    if (Array.isArray(categories)) {
+      return !categories.includes("astro") && !categories.includes("projects");
+    }
+    // If a post has no categories, we'll include it.
+    return true;
+  })
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const pageTitle = "Recent Posts"; // Customize your page title
+const pageDescription = "A collection of my projects and work."; // Customize your page description
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main>
+    <h1
+      class="mb-4 mt-40 border-b-2 border-zinc-500 font-sans text-7xl font-thin uppercase tracking-tight md:-ml-16"
+    >
+      {pageTitle}
+    </h1>
+
+    {
+      posts.length > 0 ? (
+        <ul class="space-y-2">
+          {posts.map((post) => (
+            <li class="py-2">
+              <span class="font-mono text-xl font-light uppercase tracking-wide">
+                {formatDate(post.data.date)} |
+              </span>
+              <a href={`/posts/${post.slug}/`} class="inline-block">
+                <h2 class="flex text-2xl font-semibold uppercase tracking-wide hover:underline">
+                  {post.data.title}
+                </h2>
+              </a>
+              <p class="prose font-mono text-sm font-light text-zinc-600 dark:text-zinc-400">
+                {post.data.description || "No description available."}
+              </p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="text-center text-zinc-600">No recent posts.</p>
+      )
+    }
+  </main>
+</Layout>
