@@ -23,7 +23,7 @@ const { Content } = await post.render();
 >
   <main>
     <h1
-      class="mb-0 mt-40 border-b-2 border-zinc-500 font-sans text-7xl font-thin uppercase tracking-tight md:-ml-16"
+      class="mb-0 mt-40 border-b-2 border-zinc-500 font-sans text-4xl font-thin uppercase tracking-tight md:text-7xl lg:-ml-16"
     >
       {post.data.title}
     </h1>
@@ -32,7 +32,7 @@ const { Content } = await post.render();
     >
       {formatDate(post.data.date)}
     </p>
-    <article class="mt-10 text-lg">
+    <article class="text-md mt-10 md:text-lg">
       <Content />
     </article>
   </main>

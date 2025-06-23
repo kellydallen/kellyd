@@ -23,6 +23,9 @@ For this project, I handled all phases of the technical work, from design to rol
 
 The design is clean and professional -- yet playful -- with little fluffy clouds that float across the background as the page is scrolled. While it has only just launched I believe it is among the best-in-class countrywide for a dashboard of this kind.
 
-<video controls>
-  <source src="/static/neighborhood-app.mp4" type="video/mp4">
-</video>
+Give the video below a watch, or visit the site here: [Palm Beach County Neighborhood Dashboard](https://pbc.gov/neighborhood)
+
+(Note that changes may be made in the future. If anything significant changes like the design or functionality, I will detail here.)
+
+
+<iframe width="638" height="355" src="https://www.youtube.com/embed/TQfhnchHmQs?si=ClbAEzi7xKs3fXOu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

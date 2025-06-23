@@ -94,24 +94,24 @@ const grayCircle = {
     <ViewTransitions />
   </head>
   <body
-    class="relative overflow-x-hidden pb-24 font-sans text-zinc-900 subpixel-antialiased transition-colors dark:bg-zinc-900 dark:text-zinc-200"
+    class="relative overflow-x-hidden pb-24 pl-10 pr-10 font-sans text-zinc-900 subpixel-antialiased transition-colors dark:bg-zinc-900 dark:text-zinc-200 xl:pl-24 xl:pr-24"
   >
     <!-- Yellow circle -->
     <div
-      class="absolute -z-10 rounded-full"
+      class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
       style={`background: #FEC33A; width: ${yellowCircle.size}; height: ${yellowCircle.size}; top: ${yellowCircle.top}; right: ${yellowCircle.right};`}
       transition:name="yellow-circle"
     >
     </div>
     <!-- Gray circle -->
     <div
-      class="absolute -z-10 rounded-full"
+      class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
       style={`background: #D1D5DB; width: ${grayCircle.size}; height: ${grayCircle.size}; top: ${grayCircle.top}; right: ${grayCircle.right};`}
       transition:name="gray-circle"
     >
     </div>
     <ThemeToggle />
-    <div class={cn("max-w-2xl mx-auto p-4", className)}>
+    <div class={cn("max-w-4xl mx-auto p-4", className)}>
       <Header />
       <slot />
     </div>
