@@ -7,7 +7,15 @@ interface Props {
 }
 
 const {
-  words = ["inventive", "writing", "web", "musical", "design"],
+  words = [
+    "inventive",
+    "webdev",
+    "written",
+    "musical",
+    "literary",
+    "design",
+    "creative",
+  ],
   interval = 3000,
   className = "",
 } = Astro.props;
@@ -211,14 +219,40 @@ const maxLength = Math.max(...words.map((word) => word.length));
         this.letterElements[i] = document.getElementById(`flap-${i}`);
       }
 
+      // Initialize current state by reading what's actually displayed
+      this.initializeCurrentState();
+
       if (this.letterElements.length > 0 && this.words.length > 1) {
         this.start();
       }
     }
 
+    initializeCurrentState() {
+      // Set the current state to match the padded first word
+      const firstWordPadded = this.padWord(this.words[0]);
+      this.currentLetters = [];
+      for (let i = 0; i < this.maxLength; i++) {
+        this.currentLetters[i] = firstWordPadded[i] || " ";
+      }
+    }
+
+    cleanup() {
+      // Clear any existing timeouts
+      if (this.rotationTimeout) {
+        clearTimeout(this.rotationTimeout);
+      }
+      if (this.letterTimeouts) {
+        this.letterTimeouts.forEach((timeout) => clearTimeout(timeout));
+      }
+      this.letterTimeouts = [];
+    }
+
     start() {
+      // Clear any existing timers first
+      this.cleanup();
+
       // Start the rotation after initial delay
-      setTimeout(() => {
+      this.rotationTimeout = setTimeout(() => {
         this.changeWord();
       }, this.interval);
     }
@@ -250,13 +284,17 @@ const maxLength = Math.max(...words.map((word) => word.length));
       if (totalAnimations === 0) {
         // No changes needed, just schedule next word
         this.isAnimating = false;
-        setTimeout(() => this.changeWord(), this.interval);
+        this.rotationTimeout = setTimeout(
+          () => this.changeWord(),
+          this.interval,
+        );
         return;
       }
 
+      this.letterTimeouts = [];
       positionsToChange.forEach((position, index) => {
         // Stagger the animations slightly for a more realistic effect
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
           this.animateLetter(position, nextPadded[position], () => {
             animationCount++;
             if (animationCount === totalAnimations) {
@@ -265,10 +303,14 @@ const maxLength = Math.max(...words.map((word) => word.length));
               this.isAnimating = false;
 
               // Schedule next word change
-              setTimeout(() => this.changeWord(), this.interval);
+              this.rotationTimeout = setTimeout(
+                () => this.changeWord(),
+                this.interval,
+              );
             }
           });
         }, index * 200); // 200ms stagger between letters starting their sequences
+        this.letterTimeouts.push(timeout);
       });
     }
 
@@ -276,7 +318,8 @@ const maxLength = Math.max(...words.map((word) => word.length));
       const element = this.letterElements[position];
       if (!element) return;
 
-      const currentLetter = element.textContent || " ";
+      // Use our tracked current state instead of reading from DOM
+      const currentLetter = this.currentLetters[position] || " ";
       const targetLetter = newLetter === "" ? " " : newLetter;
 
       // If letters are the same, no animation needed
@@ -289,7 +332,7 @@ const maxLength = Math.max(...words.map((word) => word.length));
       const sequence = this.getLetterSequence(currentLetter, targetLetter);
 
       // Start the sequential flipping
-      this.flipThroughSequence(element, sequence, 0, callback);
+      this.flipThroughSequence(element, sequence, 0, position, callback);
     }
 
     getLetterSequence(fromLetter, toLetter) {
@@ -327,7 +370,7 @@ const maxLength = Math.max(...words.map((word) => word.length));
       return sequence;
     }
 
-    flipThroughSequence(element, sequence, index, callback) {
+    flipThroughSequence(element, sequence, index, position, callback) {
       if (index >= sequence.length) {
         callback();
         return;
@@ -340,6 +383,9 @@ const maxLength = Math.max(...words.map((word) => word.length));
       setTimeout(() => {
         const letter = sequence[index];
         element.textContent = letter === " " ? "" : letter;
+
+        // Update our tracked state
+        this.currentLetters[position] = letter;
       }, 200);
 
       // Remove animation class and move to next letter
@@ -347,9 +393,18 @@ const maxLength = Math.max(...words.map((word) => word.length));
         element.classList.remove("flipping");
 
         // Continue to next letter in sequence
-        setTimeout(() => {
-          this.flipThroughSequence(element, sequence, index + 1, callback);
+        const timeout = setTimeout(() => {
+          this.flipThroughSequence(
+            element,
+            sequence,
+            index + 1,
+            position,
+            callback,
+          );
         }, 50); // Brief pause between letters
+        if (this.letterTimeouts) {
+          this.letterTimeouts.push(timeout);
+        }
       }, 400);
     }
 
@@ -363,13 +418,93 @@ const maxLength = Math.max(...words.map((word) => word.length));
   }
 
   // Initialize the Solari display when the DOM is ready
+  let solariInstance = null;
+  let heartbeatInterval = null;
+  let lastActiveTime = Date.now();
+
   function initSolari() {
-    new SolariLetterBoard(words, interval, maxLength);
+    // Clean up existing instance if it exists
+    if (solariInstance && solariInstance.cleanup) {
+      solariInstance.cleanup();
+    }
+
+    // Stop any existing heartbeat
+    if (heartbeatInterval) {
+      clearInterval(heartbeatInterval);
+    }
+
+    // Check if elements exist before creating instance
+    if (document.getElementById("flap-0")) {
+      solariInstance = new SolariLetterBoard(words, interval, maxLength);
+      lastActiveTime = Date.now();
+
+      // Start heartbeat monitoring
+      startHeartbeat();
+    }
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initSolari);
-  } else {
-    initSolari();
+  function startHeartbeat() {
+    heartbeatInterval = setInterval(() => {
+      // Check if instance is still active
+      if (solariInstance && !solariInstance.isAnimating) {
+        const timeSinceLastActive = Date.now() - lastActiveTime;
+
+        // If more than 2 intervals have passed without activity, restart
+        if (timeSinceLastActive > interval * 2) {
+          console.log("Solari heartbeat: restarting inactive animation");
+          solariInstance.start();
+          lastActiveTime = Date.now();
+        }
+      }
+
+      // Also check if DOM elements are missing (page changed)
+      if (!document.getElementById("flap-0")) {
+        if (heartbeatInterval) {
+          clearInterval(heartbeatInterval);
+          heartbeatInterval = null;
+        }
+        solariInstance = null;
+      }
+    }, 1000); // Check every second
   }
+
+  // Modified SolariLetterBoard to update lastActiveTime
+  const originalChangeWord = SolariLetterBoard.prototype.changeWord;
+  SolariLetterBoard.prototype.changeWord = function () {
+    lastActiveTime = Date.now();
+    return originalChangeWord.call(this);
+  };
+
+  // Multiple initialization strategies
+  function tryInit() {
+    if (document.getElementById("flap-0") && !solariInstance) {
+      initSolari();
+    }
+  }
+
+  // Initial load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", tryInit);
+  } else {
+    tryInit();
+  }
+
+  // Polling approach - check every 2 seconds if we need to reinitialize
+  setInterval(() => {
+    if (document.getElementById("flap-0") && !solariInstance) {
+      console.log("Solari polling: reinitializing after page return");
+      initSolari();
+    }
+  }, 2000);
+
+  // Also try on visibility change and focus
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      setTimeout(tryInit, 500);
+    }
+  });
+
+  window.addEventListener("focus", () => {
+    setTimeout(tryInit, 500);
+  });
 </script>
