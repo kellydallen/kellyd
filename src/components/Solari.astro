@@ -1,0 +1,375 @@
+---
+// TypeScript interface for component props
+interface Props {
+  words?: string[];
+  interval?: number;
+  className?: string;
+}
+
+const {
+  words = ["inventive", "writing", "web", "musical", "design"],
+  interval = 3000,
+  className = "",
+} = Astro.props;
+
+// Find the longest word to determine how many letter boxes we need
+const maxLength = Math.max(...words.map((word) => word.length));
+---
+
+<div class={`solari-display pt-20 ${className}`}>
+  <span class="static-text">I do </span>
+  <div class="flap-board">
+    {
+      Array.from({ length: maxLength }, (_, index) => (
+        <div class="flap-container" data-position={index}>
+          <div class="flap-letter" id={`flap-${index}`}>
+            {words[0][index] || ""}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <span class="static-text"> things</span>
+</div>
+
+<style>
+  .solari-display {
+    display: flex;
+    align-items: center;
+    font-family: "Geist Mono", "Courier New", monospace;
+    font-size: 1.75rem;
+    font-weight: 400;
+  }
+
+  .static-text {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+  }
+
+  .flap-board {
+    display: flex;
+    gap: 2px;
+    margin: 0 0.5em;
+  }
+
+  .flap-container {
+    position: relative;
+    width: 1.5em;
+    height: 1.2em;
+    background: #0a0a0a;
+    border: 2px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      inset 0 0 10px rgba(0, 0, 0, 0.8),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+    perspective: 200px;
+  }
+
+  .flap-letter {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      to bottom,
+      #2a2a2a 0%,
+      #1a1a1a 45%,
+      #0a0a0a 55%,
+      #000 100%
+    );
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform-origin: center;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .flap-letter.flipping {
+    animation: letterFlip 0.4s ease-in-out;
+  }
+
+  @keyframes letterFlip {
+    0% {
+      transform: rotateX(0deg);
+    }
+    25% {
+      transform: rotateX(-45deg);
+      background: linear-gradient(to bottom, #444 0%, #222 100%);
+    }
+    50% {
+      transform: rotateX(-90deg);
+      background: linear-gradient(to bottom, #111 0%, #000 100%);
+    }
+    75% {
+      transform: rotateX(-45deg);
+      background: linear-gradient(to bottom, #444 0%, #222 100%);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+
+  /* Add mechanical split line in the middle */
+  .flap-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #555;
+    z-index: 10;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+    transform: translateY(-0.5px);
+  }
+
+  /* Add side rivets/screws for authenticity */
+  .flap-container::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #444 30%, #222 70%);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow:
+      0 0 2px rgba(255, 255, 255, 0.1),
+      -2px 12px 0 -2px #444,
+      -2px 12px 2px -2px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Empty flap styling */
+  .flap-letter:empty {
+    background: linear-gradient(
+      to bottom,
+      #2a2a2a 0%,
+      #1a1a1a 45%,
+      #0a0a0a 55%,
+      #000 100%
+    );
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .solari-display {
+      font-size: 1.5rem;
+    }
+
+    .flap-container {
+      width: 1.8em;
+      height: 1.1em;
+    }
+
+    .flap-board {
+      gap: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .solari-display {
+      font-size: 1.2rem;
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5em;
+    }
+
+    .flap-container {
+      width: 1.6em;
+      height: 1em;
+    }
+
+    .flap-letter {
+      font-size: 0.75em;
+    }
+  }
+</style>
+
+<script define:vars={{ words, interval, maxLength }}>
+  class SolariLetterBoard {
+    constructor(words, interval, maxLength) {
+      this.words = words.map((word) => word.toUpperCase());
+      this.interval = interval;
+      this.maxLength = maxLength;
+      this.currentWordIndex = 0;
+      this.letterElements = [];
+      this.isAnimating = false;
+
+      // Define the alphabet including space for cycling
+      this.alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      this.flipSpeed = 120; // ms between each letter flip
+
+      // Get all letter elements
+      for (let i = 0; i < maxLength; i++) {
+        this.letterElements[i] = document.getElementById(`flap-${i}`);
+      }
+
+      if (this.letterElements.length > 0 && this.words.length > 1) {
+        this.start();
+      }
+    }
+
+    start() {
+      // Start the rotation after initial delay
+      setTimeout(() => {
+        this.changeWord();
+      }, this.interval);
+    }
+
+    changeWord() {
+      if (this.isAnimating) return;
+
+      this.isAnimating = true;
+      const nextWordIndex = (this.currentWordIndex + 1) % this.words.length;
+      const currentWord = this.words[this.currentWordIndex];
+      const nextWord = this.words[nextWordIndex];
+
+      // Pad words with spaces to handle different lengths
+      const currentPadded = this.padWord(currentWord);
+      const nextPadded = this.padWord(nextWord);
+
+      // Find positions that need to change
+      const positionsToChange = [];
+      for (let i = 0; i < this.maxLength; i++) {
+        if (currentPadded[i] !== nextPadded[i]) {
+          positionsToChange.push(i);
+        }
+      }
+
+      // Animate letters with staggered timing
+      let animationCount = 0;
+      const totalAnimations = positionsToChange.length;
+
+      if (totalAnimations === 0) {
+        // No changes needed, just schedule next word
+        this.isAnimating = false;
+        setTimeout(() => this.changeWord(), this.interval);
+        return;
+      }
+
+      positionsToChange.forEach((position, index) => {
+        // Stagger the animations slightly for a more realistic effect
+        setTimeout(() => {
+          this.animateLetter(position, nextPadded[position], () => {
+            animationCount++;
+            if (animationCount === totalAnimations) {
+              // All animations complete
+              this.currentWordIndex = nextWordIndex;
+              this.isAnimating = false;
+
+              // Schedule next word change
+              setTimeout(() => this.changeWord(), this.interval);
+            }
+          });
+        }, index * 200); // 200ms stagger between letters starting their sequences
+      });
+    }
+
+    animateLetter(position, newLetter, callback) {
+      const element = this.letterElements[position];
+      if (!element) return;
+
+      const currentLetter = element.textContent || " ";
+      const targetLetter = newLetter === "" ? " " : newLetter;
+
+      // If letters are the same, no animation needed
+      if (currentLetter === targetLetter) {
+        callback();
+        return;
+      }
+
+      // Get the sequence of letters to flip through
+      const sequence = this.getLetterSequence(currentLetter, targetLetter);
+
+      // Start the sequential flipping
+      this.flipThroughSequence(element, sequence, 0, callback);
+    }
+
+    getLetterSequence(fromLetter, toLetter) {
+      const fromIndex = this.alphabet.indexOf(fromLetter);
+      const toIndex = this.alphabet.indexOf(toLetter);
+
+      if (fromIndex === -1 || toIndex === -1) {
+        return [toLetter]; // Fallback to direct change
+      }
+
+      const sequence = [];
+      let currentIndex = fromIndex;
+
+      // Calculate shortest path (forward or backward through alphabet)
+      const forwardDistance =
+        (toIndex - fromIndex + this.alphabet.length) % this.alphabet.length;
+      const backwardDistance =
+        (fromIndex - toIndex + this.alphabet.length) % this.alphabet.length;
+
+      if (forwardDistance <= backwardDistance) {
+        // Go forward through alphabet
+        while (currentIndex !== toIndex) {
+          currentIndex = (currentIndex + 1) % this.alphabet.length;
+          sequence.push(this.alphabet[currentIndex]);
+        }
+      } else {
+        // Go backward through alphabet
+        while (currentIndex !== toIndex) {
+          currentIndex =
+            (currentIndex - 1 + this.alphabet.length) % this.alphabet.length;
+          sequence.push(this.alphabet[currentIndex]);
+        }
+      }
+
+      return sequence;
+    }
+
+    flipThroughSequence(element, sequence, index, callback) {
+      if (index >= sequence.length) {
+        callback();
+        return;
+      }
+
+      // Add flipping animation
+      element.classList.add("flipping");
+
+      // Change the letter at the midpoint of the animation
+      setTimeout(() => {
+        const letter = sequence[index];
+        element.textContent = letter === " " ? "" : letter;
+      }, 200);
+
+      // Remove animation class and move to next letter
+      setTimeout(() => {
+        element.classList.remove("flipping");
+
+        // Continue to next letter in sequence
+        setTimeout(() => {
+          this.flipThroughSequence(element, sequence, index + 1, callback);
+        }, 50); // Brief pause between letters
+      }, 400);
+    }
+
+    padWord(word) {
+      // Center the word and pad with spaces
+      const padding = Math.floor((this.maxLength - word.length) / 2);
+      const leftPad = " ".repeat(padding);
+      const rightPad = " ".repeat(this.maxLength - word.length - padding);
+      return leftPad + word + rightPad;
+    }
+  }
+
+  // Initialize the Solari display when the DOM is ready
+  function initSolari() {
+    new SolariLetterBoard(words, interval, maxLength);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSolari);
+  } else {
+    initSolari();
+  }
+</script>

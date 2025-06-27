@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import Solari from "../components/Solari.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -7,11 +8,10 @@ import Layout from "../layouts/Layout.astro";
 <Layout
   title={SITE_TITLE}
   description={SITE_DESCRIPTION}
-  className="ml-0 mr-auto flex h-[60vh] w-96 flex-col justify-center"
+  className="ml-0 mr-auto flex h-[60vh] flex-col justify-center"
 >
   <main class="space-y-4 text-zinc-500">
-    <p>I do web things.</p>
-    <p>I used to do music things.</p>
+    <Solari />
   </main>
 </Layout>
 <Footer />
