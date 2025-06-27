@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-description: "Things I am."
+description: "The typical background page including some random facts and links to other related information."
 date: "Jun 12 2025"
 categories: ["about"]
 ---
@@ -26,3 +26,11 @@ I'm David, also known as kelly d, an alias that came about primarily in an attem
 - I believe that my English degree helps me bring certain skills that can be not only valuable, but also less common, in tech-centric lines of work
 - I take pride in being a _Big Picture™_ person with foresight to see the challenges before they arise
 - I wrote and produced electronic music many years ago as _kelly d_, _kelly dallen_, or _metafakt_, most of which was not so great, but is still a hobby
+
+## Social Media
+
+[X/Twitter](https://x.com/kellydallen)
+
+[Bluesky](https://bsky.app/profile/eschatonic.bsky.social)
+
+[LinkedIn](https://www.linkedin.com/in/david-allen-kelly/)

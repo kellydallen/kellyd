@@ -27,5 +27,6 @@ Give the video below a watch, or visit the site here: [Palm Beach County Neighbo
 
 (Note that changes may be made in the future. If anything significant changes like the design or functionality, I will detail here.)
 
-
-<iframe width="638" height="355" src="https://www.youtube.com/embed/TQfhnchHmQs?si=ClbAEzi7xKs3fXOu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-wrapper">
+    <iframe class="w-full aspect-video rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/TQfhnchHmQs?si=3hFMVzLi1vIQyoGs?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>

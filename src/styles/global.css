@@ -37,6 +37,13 @@
   body {
     @apply subpixel-antialiased;
   }
+  .video-wrapper {
+    @apply relative my-4 w-full overflow-hidden rounded-lg;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+  .video-wrapper iframe {
+    @apply absolute left-0 top-0 h-full w-full border-0;
+  }
   article {
     p {
       @apply my-4 leading-relaxed tracking-wide;
