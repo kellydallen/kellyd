@@ -5,13 +5,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout
-  title={SITE_TITLE}
-  description={SITE_DESCRIPTION}
-  className="ml-0 mr-auto flex h-[60vh] flex-col justify-center"
->
-  <main class="space-y-4 text-zinc-500">
-    <Solari />
-  </main>
-</Layout>
-<Footer />
+<div class="flex min-h-screen flex-col">
+  <Layout
+    title={SITE_TITLE}
+    description={SITE_DESCRIPTION}
+    className="flex flex-1 flex-col items-start justify-center px-4"
+  >
+    <main class="w-full space-y-4 text-zinc-500">
+      <Solari />
+    </main>
+  </Layout>
+  <Footer />
+</div>

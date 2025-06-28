@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Header from "../components/Header.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import { cn } from "../lib/utils";
@@ -91,10 +92,12 @@ const grayCircle = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+    <GoogleAnalytics />
+
     <ViewTransitions />
   </head>
   <body
-    class="relative overflow-x-hidden pb-24 pl-10 pr-10 font-sans text-zinc-900 transition-colors dark:bg-zinc-900 dark:text-zinc-200 xl:pl-24 xl:pr-24"
+    class="relative overflow-x-hidden pl-10 pr-10 font-sans text-zinc-900 transition-colors dark:bg-zinc-900 dark:text-zinc-200 xl:pl-24 xl:pr-24"
   >
     <!-- Yellow circle -->
     <div
@@ -111,7 +114,7 @@ const grayCircle = {
     >
     </div>
     <ThemeToggle />
-    <div class={cn("max-w-6xl mx-auto p-4", className)}>
+    <div class={cn("p-4", className)}>
       <Header />
       <slot />
     </div>

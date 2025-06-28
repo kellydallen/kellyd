@@ -11,11 +11,11 @@ Reston, VA | kellyd@kellyd.com | [linkedin.com/in/david-allen-kelly](http://link
 
 ---
 
-[Download my resumé in PDF format](/kellyd_resume.pdf)
+[Download my resumé in PDF format](/kelly-resume-june-2025.pdf)
 
 ## Professional Summary
 
-Front-end developer specializing in crafting accessible, engaging user interfaces. Leveraging a creative writing background and hands-on experience building and maintaining government websites, I bring a keen eye for detail and a passion for clear, concise communication. Skilled at translating complex information into intuitive online experiences, optimizing performance, and ensuring seamless responsiveness across devices. Strong analytical ability—honed through website data analysis and library research—enables me to understand user behavior and tailor content to their needs. Driven to create impactful digital experiences that inform, empower, and delight users.  
+Front-end developer specializing in crafting accessible, engaging user interfaces. Leveraging a creative writing background and hands-on experience building and maintaining government websites, I bring a keen eye for detail and a passion for clear, concise communication. Skilled at translating complex information into intuitive online experiences, optimizing performance, and ensuring seamless responsiveness across devices. Strong analytical ability—honed through website data analysis—enables me to understand user behavior and tailor content to their needs. Driven to create impactful digital experiences that inform, empower, and delight users.  
 
 ## Core Competencies
 
@@ -34,7 +34,7 @@ Front-end developer specializing in crafting accessible, engaging user interface
 
 ### Palm Beach County, West Palm Beach, FL
 
-_Senior Software Designer (Front End Web Design), Public Relations Specialist, Analyst Programmer, Website Specialist_  
+_Senior Software Designer (Front End Web Design), Public Relations Specialist, Analyst Programmer, Website Specialist_
 _April 2012 – February 2025_
 
 - Designed and developed the [Neighborhood Information Portal](https://pbc.gov/neighborhood) using JavaScript and ARCGIS REST API, delivering comprehensive local resources for citizens.
@@ -48,7 +48,7 @@ _April 2012 – February 2025_
 
 ### JR Dunn Jewelers, Lighthouse Point, FL
 
-_Front End Designer / Digital Marketing / SEO_  
+_Front End Designer / Digital Marketing / SEO_
 _March 2011 – October 2012_
 
 - Managed full digital marketing lifecycle (PPC, social media, email, SEO).
@@ -81,6 +81,6 @@ Florida Atlantic University, Boca Raton, FL | Magna Cum Laude, Sigma Tau Delta |
 
 ## Contact
 
-kellyd@kellyd.com  
+kellyd@kellyd.com
 [linkedin.com/in/david-allen-kelly](http://linkedin.com/in/david-allen-kelly)
 [kellyd.com](https://kellyd.com)
