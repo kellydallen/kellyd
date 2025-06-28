@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Header from "../components/Header.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import { cn } from "../lib/utils";
@@ -90,7 +91,7 @@ const grayCircle = {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
-
+    <GoogleAnalytics />
     <ViewTransitions />
   </head>
   <body
