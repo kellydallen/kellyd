@@ -2,18 +2,12 @@
 import Footer from "../components/Footer.astro";
 import Solari from "../components/Solari.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import Layout from "../layouts/Layout.astro";
+import HomeLayout from "../layouts/HomeLayout.astro";
 ---
 
-<div class="flex min-h-screen flex-col">
-  <Layout
-    title={SITE_TITLE}
-    description={SITE_DESCRIPTION}
-    className="flex flex-1 flex-col items-start justify-center px-4"
-  >
-    <main class="w-full space-y-4 text-zinc-500">
-      <Solari />
-    </main>
-  </Layout>
+<HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="flex-1 space-y-4 text-zinc-500">
+    <Solari />
+  </main>
   <Footer />
-</div>
+</HomeLayout>

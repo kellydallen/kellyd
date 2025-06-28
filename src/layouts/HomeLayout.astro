@@ -2,7 +2,6 @@
 import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
-import { cn } from "../lib/utils";
 import "../styles/global.css";
 
 interface Props {
@@ -94,7 +93,7 @@ const grayCircle = {
     <ViewTransitions />
   </head>
   <body
-    class="relative overflow-x-hidden pl-10 pr-10 font-sans text-zinc-900 transition-colors dark:bg-zinc-900 dark:text-zinc-200 xl:pl-24 xl:pr-24"
+    class="relative overflow-x-hidden font-sans text-zinc-900 transition-colors dark:bg-zinc-900 dark:text-zinc-200"
   >
     <!-- Yellow circle -->
     <div
@@ -111,9 +110,16 @@ const grayCircle = {
     >
     </div>
     <ThemeToggle />
-    <div class={cn("p-4", className)}>
-      <Header />
-      <slot />
+
+    <!-- Custom home page layout -->
+    <div class="flex h-screen flex-col px-10 xl:px-24">
+      <!-- Header positioned lower -->
+      <div class="flex flex-1 flex-col justify-center">
+        <div class="md:mt-60">
+          <Header />
+        </div>
+        <slot />
+      </div>
     </div>
   </body>
 </html>
