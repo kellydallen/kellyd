@@ -9,7 +9,7 @@ categories: ["projects"]
 
 ## Background
 
-Palm Beach County's websites have all had serious ADA compliance issues. In addition, there was little to no security policy configured via CSP (Content Security Policy). While these are different issues, I took the lead on the remediation of both of these issues.
+Palm Beach County's websites have all had serious ADA compliance issues. In addition, there was little to no security policy configured via CSP (Content Security Policy). While these are different issues, I took the lead on the remediation of both of these issues. They were essentially two separate projects, but I'm listing them together here.
 
 **Additional Concerns**: The primary pbc.gov website runs as an on-premises Sharepoint that is almost entirely non-customized.
 

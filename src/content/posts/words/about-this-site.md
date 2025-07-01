@@ -18,3 +18,5 @@ With social media, personal sites also diminished in popularity some. Using Word
 In 2025, my wife and I decided to move from Florida to Northern Virginia. While I learned a lot, I felt my career with Palm Beach County had probably run its course, and I was ready for a new challenge. As a side effect, in our transition, it's the first time since I was possibly 16 that I wasn't working a 40 hour (or more) work week.
 
 When thinking about this site, I wanted to do something very minimal that puts content first, but still show quite subtle and careful design touches. Essentially everything I know about design is self-taught with a lot of effort and persistence. This site was built from the mini-blog Astro theme, as a jumping-off point, but has of course seen many customizations.
+
+The site uses CSS transitions from page to page, which you may not notice in Firefox, but should see in all the other browsers. That's how the semi-random circle SVGs appear to slide over to new sizes and locations. It was a fun idea I wanted to try to give a splash of something while sticking to the very minimal ethos.
