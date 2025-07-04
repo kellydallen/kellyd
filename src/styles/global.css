@@ -78,7 +78,11 @@
       @apply my-4 border-l-2 pl-4;
     }
     a {
-      @apply text-blue-500 underline;
+      @apply font-medium text-[inherit] text-blue-500 underline transition-colors duration-300;
+    }
+    a:hover,
+    a:focus {
+      @apply text-blue-700;
     }
     table {
       @apply my-4 w-full table-auto border-collapse text-sm;

@@ -8,13 +8,15 @@ interface Props {
 
 const {
   words = [
-    "inventive",
+    "creative",
     "web dev",
     "writing",
+    "subtle",
+    "too many?",
     "musical",
     "literary",
     "design",
-    "creative",
+    "minimal",
   ],
   interval = 3000,
   className = "",
@@ -211,7 +213,7 @@ const maxLength = Math.max(...words.map((word) => word.length));
       this.isAnimating = false;
 
       // Define the alphabet including space for cycling
-      this.alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      this.alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ?";
       this.flipSpeed = 120; // ms between each letter flip
 
       // Get all letter elements
