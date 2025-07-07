@@ -1,8 +1,9 @@
 ---
 title: "WCAG ADA Compliance and CSP Updates"
-description: "updating all the pbc.gov and custom domains to be ada-compliant or at least as passable as possible.sharepoint (on the main site) can be a difficult thing to make ada compliant, especially in an on-premises install with no customization beyond the master page."
+description: "Not a glamorous project, but something critical in today's day and age, especially for a governmental organization. I updated all the pbc.gov and custom domains to be ADA-compliant or at least as passable as possible. Sharepoint (on the main site) can be a difficult thing to make ADA compliant, especially in an on-premises install with no customization beyond the master page."
 date: "Apr 01 2024"
 categories: ["projects"]
+image: "/images/pbcpao-ada.png"
 ---
 
 **URLs**: Various Palm Beach County websites.

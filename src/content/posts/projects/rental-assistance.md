@@ -3,6 +3,7 @@ title: "Rental Assistance PBC"
 description: "During the COVID-19 pandemic, the Palm Beach County Community Services department needed a landing page and information portal for rental, utility, and other kinds of assistance built in a weekend."
 date: "August 01 2020"
 categories: ["projects"]
+image: "/images/rentalassistancepbc.org.png"
 ---
 
 **URL**: [https://rentalassistancepbc.org](https://rentalassistancepbc.org)

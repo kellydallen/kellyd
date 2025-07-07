@@ -1,6 +1,6 @@
 ---
 title: "Palm Beach County Intranet"
-description: "Redesigning the internal PBC employee site involved the design, implementing the design with CSS, and coding the Sharepoint 'Master' page."
+description: "Redesigning the internal PBC employee site involved the design, implementing the design with CSS, and coding the Sharepoint ASP.NET 'Master' page."
 date: "July 01 2016"
 categories: ["projects"]
 ---

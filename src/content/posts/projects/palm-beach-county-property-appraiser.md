@@ -1,6 +1,6 @@
 ---
 title: "Palm Beach County Property Appraiser"
-description: "the refresh of the Palm Beach County Property Appraiser site at https://pbcpao.gov/. i translated the mock-up into a working site and worked with multiple other teams including the Property Appraiser's team, the GIS team, and the application development team to translate the styles and design in a cohesive, consistent manner."
+description: "The refresh of the Palm Beach County Property Appraiser site at https://pbcpao.gov/. I translated the mock-up into a working site and worked with multiple other teams including the Property Appraiser's team, the GIS team, and the application development team to translate the styles and design in a cohesive, consistent manner."
 date: "Feb 01 2024"
 categories: ["projects"]
 ---
