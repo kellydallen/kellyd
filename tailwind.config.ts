@@ -7,7 +7,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        /*sans: ["ClashGrotesk", ...defaultTheme.fontFamily.sans],*/
         sans: ["ClashGrotesk", ...defaultTheme.fontFamily.sans],
         serif: ["Sentient", ...defaultTheme.fontFamily.serif],
         mono: ["'Geist Mono'", ...defaultTheme.fontFamily.mono],

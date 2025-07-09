@@ -2,10 +2,12 @@
 title: "About this Site"
 description: "The background of this site, with some history mixed in, and some details about the latest update to Astro.js."
 date: "Jun 13 2025"
-categories: ["site"]
+categories: ["site", "words"]
 ---
 
-_**Tl;dr**: This site now runs on Astro.js which I love working with and it has been a lot of fun to set up and learn. Astro combines ease of use with a lot of power and customization options. It's also crazy fast._
+<div>
+<strong>TLDR</strong>: This site now runs on Astro.js which I love working with and it has been a lot of fun to set up and learn. Astro combines ease of use with a lot of power and customization options. It's also crazy fast.
+</div>
 
 ## History and Background
 

@@ -7,9 +7,10 @@ image: "/images/b22-gygo.png"
 ---
 
 **URLs**:
-[http://pbcbirthto22.com](http://pbcbirthto22.com)
-[http://pbcbirthto22.com/gygo](http://pbcbirthto22.com/gygo)
-[http://friendsofyouthservices.com](http://friendsofyouthservices.com)
+
+- [http://pbcbirthto22.com](http://pbcbirthto22.com)
+- [http://pbcbirthto22.com/gygo](http://pbcbirthto22.com/gygo)
+- [http://friendsofyouthservices.com](http://friendsofyouthservices.com)
 
 ## Palm Beach County Birth to 22: Get Your Green On
 

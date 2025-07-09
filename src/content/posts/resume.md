@@ -82,5 +82,7 @@ Florida Atlantic University, Boca Raton, FL | Magna Cum Laude, Sigma Tau Delta |
 ## Contact
 
 kellyd@kellyd.com
+
 [linkedin.com/in/david-allen-kelly](http://linkedin.com/in/david-allen-kelly)
+
 [kellyd.com](https://kellyd.com)

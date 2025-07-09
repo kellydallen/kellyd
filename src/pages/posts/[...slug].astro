@@ -24,16 +24,19 @@ const { Content } = await post.render();
 >
   <main>
     <h1
-      class="mb-0 mt-40 border-b-2 border-zinc-500 font-sans text-4xl font-thin uppercase tracking-tight md:text-7xl lg:-ml-16"
+      class="mb-0 mt-40 border-b-2 border-zinc-500 font-heading text-3xl font-thin lowercase tracking-tight md:text-5xl lg:-ml-16"
     >
       {post.data.title}
     </h1>
-    <p
-      class="mb-0 text-right text-sm lowercase italic tracking-tight text-zinc-400"
-    >
+    <p class="mb-0 text-right text-sm lowercase italic text-zinc-400">
       {formatDate(post.data.date)}
     </p>
-    <article class="mt-10 text-sm font-light tracking-tighter md:text-lg">
+    <article
+      class:list={[
+        "prose mt-10 text-sm font-light md:text-lg",
+        post.slug.startsWith("words/") && "drop-cap-article",
+      ]}
+    >
       <Content />
     </article>
   </main>

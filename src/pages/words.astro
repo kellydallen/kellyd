@@ -34,7 +34,7 @@ const pageDescription = "A collection of my projects and work."; // Customize yo
 >
   <main>
     <h1
-      class="mb-4 mt-40 border-b-2 border-zinc-500 font-sans text-4xl font-thin uppercase tracking-tight md:text-7xl lg:-ml-16"
+      class="mb-4 mt-40 border-b-2 border-zinc-500 font-heading text-4xl lowercase tracking-tight md:text-6xl lg:-ml-16"
     >
       {pageTitle}
     </h1>
@@ -48,7 +48,7 @@ const pageDescription = "A collection of my projects and work."; // Customize yo
                 {formatDate(post.data.date)} |
               </span>
               <a href={`/posts/${post.slug}/`} class="inline-block">
-                <h2 class="flex text-2xl font-semibold uppercase tracking-wide hover:underline">
+                <h2 class="flex font-heading text-2xl font-semibold lowercase tracking-wide hover:underline">
                   {post.data.title}
                 </h2>
               </a>
