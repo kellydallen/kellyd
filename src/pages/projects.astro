@@ -28,6 +28,17 @@ const pageDescription = "A collection of my projects and work."; // Customize yo
     >
       {pageTitle}
     </h1>
+    <p
+      class="prose mb-8 mt-8 rounded-lg text-lg font-normal italic text-zinc-600"
+    >
+      This page features a collection of some of my projects and work, most of
+      which were completed while working for Palm Beach County. It is by no
+      means a complete list, but certainly the more intesting or larger ones.
+      Unless noted, I handled the design and development in coordination with
+      other stakeholders, departments, etc. The best example of my current work
+      is the most recent, the Palm Beach County Neighborhood dashboard, which is
+      the one I had the most control and freedom over.
+    </p>
 
     {
       projectPosts.length > 0 ? (
@@ -36,7 +47,6 @@ const pageDescription = "A collection of my projects and work."; // Customize yo
             <li class="py-2">
               <a href={`/posts/${post.slug}/`} class="inline-block">
                 <h2 class="flex text-xl font-semibold uppercase tracking-wide hover:underline">
-                  {/* <h2 class="mtb-1 text-xl font-light uppercase hover:underline"> */}
                   <svg
                     class="-ml-8 mr-2"
                     width="24"

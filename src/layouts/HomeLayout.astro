@@ -3,6 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Header from "../components/Header.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import { generateCircleStyles } from "../lib/circles.ts";
 import "../styles/global.css";
 
 interface Props {
@@ -18,31 +19,9 @@ const {
   title,
   description,
   image = "/static/blog-placeholder.png",
-  className,
 } = Astro.props;
 
-function getRandomSize(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) + min) + "px";
-}
-
-function getRandomPosition(offset: number) {
-  const top = Math.floor(Math.random() * offset) - offset / 2 + "%";
-  const right = Math.floor(Math.random() * offset) - offset / 2 + "%";
-  return { top, right };
-}
-
-// Yellow circle
-const yellowCircle = {
-  ...getRandomPosition(15),
-  size: getRandomSize(400, 600),
-};
-
-// Gray circle - slightly offset from yellow circle
-const grayCircle = {
-  top: `calc(${yellowCircle.top} + ${Math.floor(Math.random() * 100)}px)`,
-  right: `calc(${yellowCircle.right} + ${Math.floor(Math.random() * 100)}px)`,
-  size: getRandomSize(200, 400),
-};
+const { yellowCircle, grayCircle } = generateCircleStyles();
 ---
 
 <html lang="en">
@@ -57,13 +36,6 @@ const grayCircle = {
     <link
       rel="preload"
       href="/fonts/Milligram-Bold-trial.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/ClashGrotesk-Variable.woff2"
       as="font"
       type="font/woff2"
       crossorigin
