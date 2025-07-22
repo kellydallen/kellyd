@@ -68,27 +68,34 @@ const { yellowCircle, grayCircle } = generateCircleStyles();
     <ViewTransitions />
   </head>
   <body
-    class="relative overflow-x-hidden pl-10 pr-10 font-sans text-zinc-900 transition-colors dark:bg-zinc-900 dark:text-zinc-200 xl:pl-24 xl:pr-24"
+    class="relative overflow-x-hidden font-sans text-zinc-900 transition-colors dark:bg-zinc-900 dark:text-zinc-200"
   >
-    <!-- Yellow circle -->
-    <div
-      class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
-      style={`background: #FEC33A; width: ${yellowCircle.size}; height: ${yellowCircle.size}; top: ${yellowCircle.top}; right: ${yellowCircle.right};`}
-      transition:name="yellow-circle"
-    >
+    <div id="bgback" class="fixed inset-0 z-0 bg-zinc-900 dark:bg-zinc-100">
     </div>
-    <!-- Gray circle -->
     <div
-      class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
-      style={`background: #D1D5DB; width: ${grayCircle.size}; height: ${grayCircle.size}; top: ${grayCircle.top}; right: ${grayCircle.right};`}
-      transition:name="gray-circle"
+      id="bgoverlay"
+      class="fixed inset-[15px] z-10 overflow-hidden overflow-y-auto rounded-xl bg-zinc-100 dark:bg-zinc-900"
     >
+      <!-- Yellow circle -->
+      <div
+        class="absolute hidden overflow-hidden rounded-full md:block"
+        style={`background: #FEC33A; width: ${yellowCircle.size}; height: ${yellowCircle.size}; top: ${yellowCircle.top}; right: ${yellowCircle.right};`}
+        transition:name="yellow-circle"
+      >
+      </div>
+      <!-- Gray circle -->
+      <div
+        class="absolute hidden overflow-hidden rounded-full md:block"
+        style={`background: #D1D5DB; width: ${grayCircle.size}; height: ${grayCircle.size}; top: ${grayCircle.top}; right: ${grayCircle.right};`}
+        transition:name="gray-circle"
+      >
+      </div>
+      <div class={cn("p-8 z-20 relative", className)}>
+        <Header />
+        <slot />
+      </div>
     </div>
     <ThemeToggle />
-    <div class={cn("p-4", className)}>
-      <Header />
-      <slot />
-    </div>
   </body>
 </html>
 

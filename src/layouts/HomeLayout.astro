@@ -68,32 +68,39 @@ const { yellowCircle, grayCircle } = generateCircleStyles();
   <body
     class="relative overflow-x-hidden font-sans text-zinc-900 transition-colors dark:bg-zinc-900 dark:text-zinc-200"
   >
-    <!-- Yellow circle -->
-    <div
-      class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
-      style={`background: #FEC33A; width: ${yellowCircle.size}; height: ${yellowCircle.size}; top: ${yellowCircle.top}; right: ${yellowCircle.right};`}
-      transition:name="yellow-circle"
-    >
+    <div id="bgback" class="fixed inset-0 z-0 bg-zinc-900 dark:bg-zinc-100">
     </div>
-    <!-- Gray circle -->
     <div
-      class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
-      style={`background: #D1D5DB; width: ${grayCircle.size}; height: ${grayCircle.size}; top: ${grayCircle.top}; right: ${grayCircle.right};`}
-      transition:name="gray-circle"
+      id="bgoverlay"
+      class="fixed inset-[15px] z-10 overflow-hidden overflow-y-auto rounded-xl bg-zinc-100 dark:bg-zinc-900"
     >
-    </div>
-    <ThemeToggle />
+      <!-- Yellow circle -->
+      <div
+        class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
+        style={`background: #FEC33A; width: ${yellowCircle.size}; height: ${yellowCircle.size}; top: ${yellowCircle.top}; right: ${yellowCircle.right};`}
+        transition:name="yellow-circle"
+      >
+      </div>
+      <!-- Gray circle -->
+      <div
+        class="absolute -z-10 hidden overflow-hidden rounded-full md:block"
+        style={`background: #D1D5DB; width: ${grayCircle.size}; height: ${grayCircle.size}; top: ${grayCircle.top}; right: ${grayCircle.right};`}
+        transition:name="gray-circle"
+      >
+      </div>
 
-    <!-- Custom home page layout -->
-    <div class="flex h-screen flex-col px-10 xl:px-24">
-      <!-- Header positioned lower -->
-      <div class="flex flex-1 flex-col justify-center">
-        <div class="md:mt-60">
-          <Header />
+      <!-- Custom home page layout -->
+      <div class="flex min-h-[97vh] flex-col px-10 xl:px-24">
+        <!-- Header positioned lower -->
+        <div class="flex flex-1 flex-col justify-center">
+          <div class="md:mt-32">
+            <Header />
+          </div>
+          <slot />
         </div>
-        <slot />
       </div>
     </div>
+    <ThemeToggle />
   </body>
 </html>
 
