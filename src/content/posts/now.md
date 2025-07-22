@@ -7,6 +7,13 @@ categories: ["about"]
 
 I love the idea of sharing some of what we're into, doing, enjoying, reading or just want to bring more attention to so I'm going to collect things like that right here. I'm not entirely sure whether this will be entirely transient, or whether I may occasionally save these for archiving.
 
+## July 22, 2025
+
+**Meditations for the anxious mind**
+
+A brilliant YouTube channel by Frankie.
+[https://www.youtube.com/watch?v=6D7dM6u53Us](A good video to start with related to Aphex Twin)
+
 ## June 14, 2025
 
 **Malazan: Book of the Fallen**
