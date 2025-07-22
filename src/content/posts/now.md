@@ -13,7 +13,7 @@ I love the idea of sharing some of what we're into, doing, enjoying, reading or 
 
 A brilliant YouTube channel by Frankie.
 
-(A good video to start with related to Aphex Twin)[https://www.youtube.com/watch?v=6D7dM6u53Us]
+<a href="https://www.youtube.com/watch?v=6D7dM6u53Us" target="_blank">A good video to start with related to Aphex Twin</a>
 
 ## June 14, 2025
 
