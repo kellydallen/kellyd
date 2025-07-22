@@ -12,7 +12,8 @@ I love the idea of sharing some of what we're into, doing, enjoying, reading or 
 **Meditations for the anxious mind**
 
 A brilliant YouTube channel by Frankie.
-[https://www.youtube.com/watch?v=6D7dM6u53Us](A good video to start with related to Aphex Twin)
+
+(A good video to start with related to Aphex Twin)[https://www.youtube.com/watch?v=6D7dM6u53Us]
 
 ## June 14, 2025
 
