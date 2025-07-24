@@ -26,6 +26,15 @@ const { yellowCircle, grayCircle } = generateCircleStyles();
 
 <html lang="en">
   <head>
+    <!-- Theme script - FIRST to prevent flash -->
+    <script is:inline>
+      // Prevent flash of wrong theme - default to dark
+      (function () {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
+
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -111,12 +120,12 @@ const { yellowCircle, grayCircle } = generateCircleStyles();
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       theme = localStorage.getItem("theme");
     } else {
-      theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+      // Always default to dark theme
+      theme = "dark";
     }
 
-    document.documentElement.classList[theme ? "add" : "remove"](theme);
+    document.documentElement.classList.remove("dark", "light");
+    document.documentElement.classList.add(theme);
 
     if (typeof localStorage !== "undefined") {
       const observer = new MutationObserver(() => {
@@ -131,6 +140,5 @@ const { yellowCircle, grayCircle } = generateCircleStyles();
   };
 
   setTheme();
-
   document.addEventListener("astro:after-swap", setTheme);
 </script>
