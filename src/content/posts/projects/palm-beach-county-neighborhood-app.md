@@ -6,10 +6,10 @@ categories: ["projects"]
 image: "/images/neighborhood-1.png"
 ---
 
-**Project Role**: Lead UX/UI Designer & Front-End Engineer<br/>
-**Organization**: Palm Beach County Public Affairs<br/>
-**Timeline**: mid 2024 and early 2025<br/>
-**Tools Used**: ArcGIS JavaScript APIs, HTML/CSS/JS, Looker Studio, Agile Methodology<br/>
+**Project Role**: Lead UX/UI Designer & Front-End Engineer  
+**Organization**: Palm Beach County Public Affairs  
+**Timeline**: mid 2024 and early 2025  
+**Tools Used**: ArcGIS JavaScript APIs, HTML/CSS/JS, Looker Studio, Agile Methodology
 
 ## **Overview**
 
@@ -97,9 +97,8 @@ The project has received internal praise from multiple departments, and I antici
 
 _Want to experience it firsthand?_
 
-**URL**: [Palm Beach County Neighborhood Dashboard](https://pbc.gov/neighborhood)
-
-**(note of course that it may change in the future since I have moved on.)**
+**URL**: [Palm Beach County Neighborhood Dashboard](https://pbc.gov/neighborhood)  
+_(note of course that it may change in the future since I have moved on.)_
 
 <div class="video-wrapper">
     <iframe class="w-full aspect-video rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/TQfhnchHmQs?si=3hFMVzLi1vIQyoGs?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

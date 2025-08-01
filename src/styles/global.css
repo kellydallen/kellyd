@@ -87,6 +87,9 @@
     p {
       @apply my-4 leading-relaxed tracking-wide;
     }
+    strong {
+      @apply font-semibold tracking-wide;
+    }
     h1 {
       @apply my-4 text-4xl font-medium dark:text-white;
     }
@@ -138,7 +141,7 @@
     ul {
       @apply my-1 list-inside list-disc space-y-1 tracking-wide [&_ol]:pl-5 [&_ul]:pl-5;
       li {
-        @apply pb-3 pl-1;
+        @apply pb-1 pl-1;
       }
     }
     kbd {
