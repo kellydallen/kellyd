@@ -46,7 +46,7 @@ The initial interface featured:
 - An interactive map for orientation
 - Auto-scrolling and categorized results once a valid address is submitted
 
-To streamline content without overwhelming users, I organized results into expandable accordion sections such as “Government,” “Public Safety,” and “Evacuation Info,” with the most relevant info—local government—automatically expanded by default.
+To streamline content without overwhelming users, I organized results into expandable accordion sections such as “Government,” “Public Safety,” and “Transportation,” with the most relevant info—local government—automatically expanded by default.
 
 ## **Stakeholder Engagement & Iterative Improvement**
 
@@ -98,7 +98,12 @@ The project has received internal praise from multiple departments, and I antici
 _Want to experience it firsthand?_
 
 **URL**: [Palm Beach County Neighborhood Dashboard](https://pbc.gov/neighborhood)  
-_(note of course that it may change in the future since I have moved on.)_
+You will need to test with Palm Beach County addresses. Here are a couple:
+
+- 1100 S. Ocean Blvd, Palm Beach, FL
+- 301 N. Olive Ave, West Palm Beach, FL
+
+_(note of course that it may change in the future since I have moved on. A quick video overview is below.)_
 
 <div class="video-wrapper">
     <iframe class="w-full aspect-video rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/TQfhnchHmQs?si=3hFMVzLi1vIQyoGs?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
