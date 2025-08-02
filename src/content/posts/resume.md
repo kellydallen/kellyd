@@ -87,8 +87,13 @@ Studied under Dr. Roxane Gay (author, NYT columnist)
 
 ## Personal Achievements
 
-- Selected to attend Dennis Lehane’s Writers in Paradise Retreat, 2016  
-  Faculty included Laura Lippman, Andre Dubus III, Stewart O’Nan, Les Standiford
+- Selected to attend Dennis Lehane’s Writers in Paradise Retreat, 2016 - Faculty included Laura Lippman, Andre Dubus III, Stewart O’Nan, Les Standiford
+
+## Hobbies
+
+- Sound design, audio & video editing
+- Creative writing
+- Console & PC gaming
 
 ## Contact
 
