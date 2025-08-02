@@ -11,7 +11,7 @@ Reston, VA | kellyd@kellyd.com | [linkedin.com/in/david-allen-kelly](http://link
 
 ---
 
-[Download my resumé in PDF format](/kelly-resume-june-2025.pdf)
+[Download my resumé in PDF format](/kellyd-resume.pdf)
 
 ## Professional Summary
 
