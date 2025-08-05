@@ -29,7 +29,8 @@ const maxLength = Math.max(...words.map((word) => word.length));
 <div
   class={`solari-display pt-8 text-zinc-600 dark:text-zinc-400 ${className}`}
 >
-  <span class="text-10xl font-heading text-zinc-300 dark:text-zinc-700"
+  <span
+    class="font-heading text-3xl text-zinc-300 dark:text-zinc-700 lg:text-[3rem]"
     >I do
   </span>
   <div class="flap-board">
@@ -43,8 +44,10 @@ const maxLength = Math.max(...words.map((word) => word.length));
       ))
     }
   </div>
-  <span class="text-10xl font-heading text-zinc-300 dark:text-zinc-700">
-    things</span
+  <span
+    class="font-heading text-3xl text-zinc-300 dark:text-zinc-700 lg:text-[3rem]"
+  >
+    things.</span
   >
 </div>
 
@@ -53,7 +56,6 @@ const maxLength = Math.max(...words.map((word) => word.length));
     display: flex;
     align-items: center;
     font-family: "Geist Mono", "Courier New", monospace;
-    font-size: 3rem;
     font-weight: 400;
   }
 
@@ -61,6 +63,7 @@ const maxLength = Math.max(...words.map((word) => word.length));
     display: flex;
     gap: 2px;
     margin: 0 0.5em;
+    font-size: 3rem;
   }
 
   .flap-container {
@@ -170,23 +173,23 @@ const maxLength = Math.max(...words.map((word) => word.length));
 
   /* Responsive design */
   @media (max-width: 768px) {
-    .solari-display {
-      font-size: 1.5rem;
-    }
+    /* .solari-display {
+      font-size: 1.25rem;
+    } */
 
     .flap-container {
-      width: 1.8em;
-      height: 1.1em;
+      width: 1.4em;
+      height: 1.4em;
     }
 
     .flap-board {
+      font-size: 1.125rem;
       gap: 1px;
     }
   }
 
   @media (max-width: 480px) {
     .solari-display {
-      font-size: 1.2rem;
       flex-direction: column;
       text-align: center;
       gap: 0.5em;
@@ -194,11 +197,14 @@ const maxLength = Math.max(...words.map((word) => word.length));
 
     .flap-container {
       width: 1.6em;
-      height: 1em;
+      height: 1.6em;
     }
 
     .flap-letter {
       font-size: 0.75em;
+    }
+    .flap-board {
+      font-size: 1.3rem;
     }
   }
 </style>
