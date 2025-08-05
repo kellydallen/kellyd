@@ -9,11 +9,9 @@ categories: ["about"]
 
 I'm David, also known as kelly d, an alias that came about primarily in an attempt to be more memorable (?) and a bit more Google-friendly.
 
-> Check out my recent [projects](/projects).
-
-> Check out what I'm into [now](/now).
-
-> Check out my [resume](/posts/resume).
+- **Check out my recent [projects](/projects).**
+- **Check out what I'm into [now](/now).**
+- **Check out my [resume](/posts/resume).**
 
 ## Lightning Round:
 

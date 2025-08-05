@@ -27,9 +27,11 @@ const maxLength = Math.max(...words.map((word) => word.length));
 ---
 
 <div
-  class={`solari-display pt-12 text-zinc-600 dark:text-zinc-400 ${className}`}
+  class={`solari-display pt-8 text-zinc-600 dark:text-zinc-400 ${className}`}
 >
-  <span class="static-text">I do </span>
+  <span class="text-10xl font-heading text-zinc-300 dark:text-zinc-700"
+    >I do
+  </span>
   <div class="flap-board">
     {
       Array.from({ length: maxLength }, (_, index) => (
@@ -41,7 +43,9 @@ const maxLength = Math.max(...words.map((word) => word.length));
       ))
     }
   </div>
-  <span class="static-text"> things</span>
+  <span class="text-10xl font-heading text-zinc-300 dark:text-zinc-700">
+    things</span
+  >
 </div>
 
 <style>
@@ -49,13 +53,8 @@ const maxLength = Math.max(...words.map((word) => word.length));
     display: flex;
     align-items: center;
     font-family: "Geist Mono", "Courier New", monospace;
-    font-size: 1.625rem;
+    font-size: 3rem;
     font-weight: 400;
-  }
-
-  .static-text {
-    font-size: 0.875rem;
-    text-transform: uppercase;
   }
 
   .flap-board {

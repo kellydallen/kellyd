@@ -28,12 +28,12 @@ const { Content } = await post.render();
     >
       {post.data.title}
     </h1>
-    <p class="mb-0 text-right text-sm lowercase italic text-zinc-400">
+    <p class="mb-0 text-right lowercase italic text-zinc-400">
       {formatDate(post.data.date)}
     </p>
     <article
       class:list={[
-        "prose mt-10 text-sm font-light md:text-lg",
+        "prose mt-10 font-light md:text-lg",
         post.slug.startsWith("words/") && "drop-cap-article",
       ]}
     >

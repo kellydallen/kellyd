@@ -32,7 +32,7 @@ const { yellowCircle, grayCircle } = generateCircleStyles();
     <script is:inline>
       // Prevent flash of wrong theme - default to dark
       (function () {
-        const theme = localStorage.getItem("theme") || "dark";
+        const theme = localStorage.getItem("theme") || "light";
         document.documentElement.classList.add(theme);
       })();
     </script>
@@ -116,7 +116,7 @@ const { yellowCircle, grayCircle } = generateCircleStyles();
       theme = localStorage.getItem("theme");
     } else {
       // Always default to dark theme
-      theme = "dark";
+      theme = "light";
     }
 
     document.documentElement.classList.remove("dark", "light");
