@@ -1,11 +1,19 @@
 ---
 title: "Now"
 description: "Everything I'm into now whether it's a tv show, a book, a program or app, a game ... anything I would love to see get some more love or attention."
-date: "Jun 13 2025"
+date: "Aug 5 2025"
 categories: ["about"]
 ---
 
 I love the idea of sharing some of what we're into, doing, enjoying, reading or just want to bring more attention to so I'm going to collect things like that right here. I'm not entirely sure whether this will be entirely transient, or whether I may occasionally save these for archiving.
+
+## August 5, 2025
+
+**Raycast**
+
+I've been using Raycast for a while now and I can't recommend it enough. The Alfred app is the OG of this kind of functionality, but Raycast really goes to the next level. I realize in the upcoming version of MacOS, Spotlight may get a little bit of this functionality, but Raycast really shines with the customizations and downloadable extensions (and it's free, other than some of the AI features).
+
+<a href="https://www.raycast.com/" target="_blank">Raycast</a>
 
 ## July 22, 2025
 
