@@ -34,7 +34,7 @@ Key planning activities included:
 - **Verifying feasibility of integrating 12–15 GIS data sources via API**
 - **Creating an address autocomplete system to streamline the search experience**
 
-![neighborhood app top of page with text entry and governmental results](/images/neighborhood-1.png)
+![neighborhood app top of page with text entry](/images/pbc-neighborhood-1.png)
 
 ## **Prototype Development**
 
@@ -47,6 +47,8 @@ The initial interface featured:
 - Auto-scrolling and categorized results once a valid address is submitted
 
 To streamline content without overwhelming users, I organized results into expandable accordion sections such as “Government,” “Public Safety,” and “Transportation,” with the most relevant info—local government—automatically expanded by default.
+
+![neighborhood app governmental section](/images/pbc-neighborhood-2.png)
 
 ## **Stakeholder Engagement & Iterative Improvement**
 
@@ -72,6 +74,8 @@ To ensure long-term sustainability, I:
 - Designed the system to rely on live-updating GIS data (minimal manual maintenance)
 - Set up editable text files for city and elected official info so non-technical users could make updates without developer support
 - Conducted and recorded a detailed training session for the incoming technical staff
+
+![neighborhood app autocomplete section](/images/neighborhood-1.gif)
 
 ## **Impact & Outcomes**
 
