@@ -5,7 +5,7 @@ date: "Jun 12 2025"
 categories: ["about"]
 ---
 
-Front End Web Development, UI/UX  
+**UI/UX Designer, Front-end Engineer**  
 Reston, VA | kellyd@kellyd.com | [linkedin.com/in/david-allen-kelly](http://linkedin.com/in/david-allen-kelly) | [kellyd.com](https://kellyd.com)
 
 ---
