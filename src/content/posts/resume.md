@@ -20,38 +20,30 @@ UI/UX Designer and Front-end Engineer specializing in crafting accessible, engag
 
 ### **Palm Beach County**
 
-**Senior Software Designer (Front End and UI/UX)**  
+**Senior Software Designer (UI/UX Design / Front-end Engineer)**  
 _West Palm Beach, FL — 10/2012 – 02/2025_
 
-- Engineered and designed the [Neighborhood Information Portal](https://pbc.gov/neighborhood) using JavaScript and ARCGIS REST API.
-- Led full UI/UX redevelopment of [Palm Beach County Property Appraiser site](https://pbcpao.gov), creating a scalable, ADA-compliant platform.
-- Engineered and maintained a decentralized web ecosystem across 20+ departments with 10M+ annual page views.
-- Modernized video streaming for cross-platform compatibility (Windows, Mac, Android, iOS).
-- Implemented accessibility testing/remediation to meet or exceed WCAG 2.1.
-- Developed digital marketing strategies using OBS, Google Analytics, and Mailchimp.
-- Directed social media workflows, CMS enhancements, and data migrations.
-- Collaborated with leadership/stakeholders to align digital strategy with organizational goals.
-- Co-founded the Digital Information Support Center (DISC) for emergency messaging and response.
-- Coordinated with Mayor and Commission staff on marketing, photography, proclamations, and public meeting materials.
+- Led user research, design, and development of the [Neighborhood Information Portal](https://pbc.gov/neighborhood) using JavaScript and ArcGIS REST API, delivering comprehensive local resources validated through testing.
+- Led full UI/UX redevelopment of the [Palm Beach County Property Appraiser site](https://pbcpao.gov), converting design concepts into a scalable, ADA-compliant production platform.
+- Engineered and maintained a decentralized web ecosystem – including public-facing and intranet – coordinating content and technical strategy across 20+ departments for sites with 10M+ annual page views.
+- Led iterative user testing sessions with internal customers, incorporating feedback to refine interface designs and enhance site functionality.
+- Modernized video streaming solutions for cross-platform compatibility (Windows, Mac, Android, iOS, tablets).
+- Instituted rigorous accessibility testing and remediation, consistently achieving/exceeding WCAG 2.1 benchmarks.
+- Developed digital marketing strategies and training resources using OBS, Google Analytics, and Mailchimp.
+- Oversaw social media workflows, data migrations, and ongoing CMS enhancements.
+- Liaised with leadership and stakeholders to align web strategies with organizational goals.
+- Instrumental in the creation and management of the Digital Information Support Center (DISC), which leverages social media for information gathering and dissemination during emergency activations such as hurricanes.
+- Collaborated with Mayor and Commission offices on digital marketing initiatives, including photography and proclamation design.
 
 ### **JR Dunn Jewelers**
 
-**Front End Designer / Digital Marketing / SEO**  
+**UI/UX Designer / Digital Marketing / SEO**  
 _Lighthouse Point, FL — 03/2011 – 10/2012_
 
 - Designed and deployed retail websites using CMS and ASP.NET.
-- Enhanced UX and site performance through data-driven optimization.
-- Managed ad campaigns across Google Ads, Bing Ads, and Facebook Ads, optimizing KPIs.
-- Analyzed campaign data for strategy and budget optimization.
-
-### **Palm Beach County Library System**
-
-**Webmaster (Library Associate V)**  
-_West Palm Beach, FL — 08/2006 – 02/2011_
-
-- Led website redesign and Drupal CMS integration.
-- Launched initial social media and email marketing campaigns.
-- Received Golden Palm award for library rebranding and tagline contribution.
+- Optimized user experience and site performance with targeted analytics and SEO improvements.
+- Managed online advertising campaigns across Google Ads, Bing Ads, and Facebook Ads, optimizing performance and achieving target KPIs.
+- Conducted in-depth analysis of campaign data to drive strategic enhancements and budget efficiencies.
 
 ## Education
 
@@ -61,19 +53,50 @@ _Boca Raton, FL — 05/2015_
 **Magna Cum Laude**  
 Studied under Dr. Roxane Gay (author, NYT columnist)
 
-## Core Competencies
+## Skills
 
-- **Front End:** JavaScript, TypeScript, HTML5, CSS3/Sass, jQuery, AJAX
-- **Frameworks & Libraries:** TailwindCSS, BEM, Bootstrap, React
-- **CMS & Platforms:** SharePoint, WordPress, Drupal
-- **Accessibility:** ADA, Section 508, WCAG 2.1
-- **Databases & APIs:** SQL, RESTful APIs, ArcGIS API
-- **Design & Publishing:** Figma, Adobe Creative Suite (Photoshop, Illustrator, InDesign), Responsive & User-Centric Design
-- **Metrics & Analytics:** SEO, Google Analytics, Looker Studio, A/B Testing
-- **Email Marketing:** Constant Contact, Mailchimp, Sendy, Amazon SES
-- **Project Management:** Agile, Jira, Cross-functional Collaboration
-- **Tools & Development:** Power Apps, Tableau, ArcGIS, No-Code Tools
-- **AI & GenAI:** Python for GenAI, RAG, Ollama, Stable Diffusion, AI-assisted Coding
+**FRONT END DEVELOPMENT**
+
+- JavaScript, TypeScript, HTML5, CSS3/Sass
+- React, jQuery, TailwindCSS, Bootstrap
+
+**UI/UX DESIGN**
+
+- Figma, Wireframing, Prototyping, Responsive Design
+- Adobe Creative Suite (Photoshop, Illustrator, InDesign)
+- User-Centric Design, Cross-Browser Compatibility
+
+**PLATFORMS & CMS**
+
+- SharePoint, WordPress, Drupal
+- Power Apps, Tableau, ArcGIS
+
+**DATA & ANALYTICS**
+
+- Google Analytics, Looker Studio, A/B Testing, SEO
+- SQL, RESTful APIs, ArcGIS API
+
+**ACCESSIBILITY & COMPLIANCE**
+
+- ADA, Section 508, WCAG 2.1
+
+**EMAIL MARKETING**
+
+- Constant Contact, Mailchimp, Sendy, Amazon SES
+
+**PROJECT MANAGEMENT**
+
+- Agile, Cross-Functional Collaboration, Jira
+
+**AI & EMERGING TECHNOLOGIES**
+
+- Python for GenAI, RAG, Ollama
+- Stable Diffusion, AI-Assisted Coding
+
+**WRITING & EDITORIAL**
+
+- AP Style, Copyediting, Proofreading
+- Content Strategy, Technical Writing
 
 ## Certificates
 
