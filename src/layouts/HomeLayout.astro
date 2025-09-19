@@ -139,8 +139,10 @@ const {
     >
       <!-- 3. Decorative circles - above white background but below black frame -->
       {
-        decorativeCircles.map((circle) => (
+        decorativeCircles.map((circle, index) => (
           <div
+            transition:name={`circle-${index}`}
+            id={`circle-${index}`}
             class={`absolute overflow-hidden rounded-full md:block`}
             style={`
           width: ${circle.size};
