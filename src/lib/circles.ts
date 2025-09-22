@@ -1,31 +1,57 @@
-// src/lib/circles.ts
-
-// Helper function to generate a random size string (e.g., "550px")
-function getRandomSize(min: number, max: number): string {
-  return Math.floor(Math.random() * (max - min) + min) + "px";
+export interface Circle {
+  size: string;
+  top: string;
+  left: string;
+  color: string;
+  blur: string;
+  opacity: string;
 }
 
-// Helper function to generate a random position object
-function getRandomPosition(offset: number): { top: string; right: string } {
-  const top = Math.floor(Math.random() * offset) - offset / 2 + "%";
-  const right = Math.floor(Math.random() * offset) - offset / 2 + "%";
-  return { top, right };
-}
+export function generateCircles(
+  count: number,
+  topMin: number = -20,
+  topRange: number = 40,
+  leftMin: number = -20,
+  leftRange: number = 40,
+): Circle[] {
+  const circles: Circle[] = [];
+  let currentHue = 73; // Base hue for #FEC33A (first circle)
+  const baseSaturation = 99;
+  const hueVariation = 8; // Plus or minus this amount for each successive circle
 
-// The main exported function that generates styles for both circles
-export function generateCircleStyles() {
-  // Yellow circle
-  const yellowCircle = {
-    ...getRandomPosition(15),
-    size: getRandomSize(400, 600),
-  };
+  for (let i = 0; i < count; i++) {
+    // Random size between 300px and 600px
+    const size = Math.floor(Math.random() * (600 - 300) + 300);
 
-  // Gray circle - slightly offset from yellow circle
-  const grayCircle = {
-    top: `calc(${yellowCircle.top} + ${Math.floor(Math.random() * 100)}px)`,
-    right: `calc(${yellowCircle.right} + ${Math.floor(Math.random() * 100)}px)`,
-    size: getRandomSize(200, 400),
-  };
+    // Random position
+    const top = Math.floor(Math.random() * topRange) + topMin + "%";
+    const left = Math.floor(Math.random() * leftRange) + leftMin + "%";
 
-  return { yellowCircle, grayCircle };
+    // Vary the luminance for each circle
+    const luminance = Math.floor(Math.random() * 30) + 50; // Between 50-80%
+
+    // Random blur strength
+    const blurStrength = Math.floor(Math.random() * 3) + 2; // Between 2-4
+
+    // Use the current hue for this circle
+    circles.push({
+      size: `${size}px`,
+      top,
+      left,
+      color: `hsl(${currentHue}, ${baseSaturation}%, ${luminance}%)`,
+      blur: `blur-${blurStrength}xl`,
+      opacity: `${Math.random() * 0.2 + 0.1}`, // Between 0.1 and 0.3
+    });
+
+    // Calculate the next hue as a random variation from the current one
+    // Random number between -5 and +5
+    const hueChange =
+      Math.floor(Math.random() * (hueVariation * 3 + 1)) - hueVariation;
+    currentHue = currentHue + hueChange;
+
+    // Optional: Keep hue in valid range (0-360)
+    currentHue = ((currentHue % 360) + 360) % 360;
+  }
+
+  return circles;
 }
