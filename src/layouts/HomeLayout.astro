@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Header from "../components/Header.astro";
+import Navigation from "../components/Navigation.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import { generateCircles } from "../lib/circles";
 import "../styles/global.css";
@@ -105,12 +106,12 @@ const {
           />
         ))
       }
-
       <!-- Custom home page layout -->
-      <div class="flex min-h-[97vh] flex-col px-10 xl:px-24">
+      <div class="z-50 flex min-h-[97vh] flex-col px-10 xl:px-24">
         <!-- Header positioned lower -->
         <div class="flex flex-1 flex-col justify-center">
           <div class="md:mt-32">
+            <Navigation />
             <Header />
           </div>
           <slot />

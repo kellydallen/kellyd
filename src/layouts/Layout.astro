@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Header from "../components/Header.astro";
+import Navigation from "../components/Navigation.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import { generateCircles } from "../lib/circles";
 import { cn } from "../lib/utils";
@@ -105,6 +106,7 @@ const {
       }
 
       <div class={cn("z-20 relative", className)}>
+        <Navigation />
         <Header />
         <slot />
       </div>

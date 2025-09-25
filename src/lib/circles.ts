@@ -46,7 +46,7 @@ export function generateCircles(
     // Calculate the next hue as a random variation from the current one
     // Random number between -5 and +5
     const hueChange =
-      Math.floor(Math.random() * (hueVariation * 3 + 1)) - hueVariation;
+      Math.floor(Math.random() * (hueVariation * 5 + 1)) - hueVariation;
     currentHue = currentHue + hueChange;
 
     // Optional: Keep hue in valid range (0-360)
