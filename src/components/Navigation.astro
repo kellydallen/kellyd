@@ -3,7 +3,7 @@
 ---
 
 <nav
-  class="text-md fixed right-1 top-[15px] z-40 transform rounded-bl-xl rounded-br-xl bg-[#2D3047] py-3 font-mono font-normal tracking-tighter text-zinc-200 dark:bg-zinc-100 dark:text-[#2D3047] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:px-2"
+  class="text-md fixed left-1/2 right-auto top-8 z-40 -translate-x-1/2 transform rounded-full bg-[#2D3047] p-3 font-mono font-normal tracking-tighter text-zinc-200 shadow-lg dark:bg-zinc-100 dark:text-[#2D3047]"
 >
   <a href="/">home</a>
   <a href="/words">words</a>
@@ -12,6 +12,6 @@
 
 <style>
   nav a {
-    @apply p-4 transition-colors hover:text-white hover:underline dark:hover:text-black;
+    @apply rounded-3xl px-4 py-2 transition-colors hover:bg-zinc-100 hover:text-[#2D3047] hover:underline dark:hover:bg-[#2D3047] dark:hover:text-zinc-100;
   }
 </style>
