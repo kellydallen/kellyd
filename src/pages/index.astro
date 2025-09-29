@@ -1,13 +1,10 @@
 ---
 import Footer from "../components/Footer.astro";
-import Solari from "../components/Solari.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import HomeLayout from "../layouts/HomeLayout.astro";
 ---
 
 <HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main class="flex-1 space-y-4 text-zinc-500">
-    <Solari />
-  </main>
+  <main class="flex-1 space-y-4 text-zinc-500"></main>
   <Footer />
 </HomeLayout>
