@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "Everything I'm into now whether it's a tv show, a book, a program or app, a game ... anything I would love to see get some more love or attention."
-date: "Aug 5 2025"
+date: "Sep 30 2025"
 categories: ["about"]
 image: "/images/now/eve.jpg"
 ---
