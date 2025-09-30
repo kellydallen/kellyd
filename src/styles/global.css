@@ -121,7 +121,7 @@
       @apply my-4 border-l-2 pl-4;
     }
     a {
-      @apply font-medium text-[inherit] text-blue-500 underline transition-colors duration-300;
+      @apply font-medium tracking-wider text-[inherit] text-blue-500 underline transition-colors duration-300 dark:text-yellow-300;
     }
     a:hover,
     a:focus {

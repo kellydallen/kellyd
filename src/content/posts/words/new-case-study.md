@@ -3,6 +3,7 @@ title: "Two New Case Studies"
 description: "As I'm developing and expanding this info-site-slash-portfolio-slash-blog, I'm trying to expand upon some of the initial things I rushed to get up."
 date: "Aug 1 2025"
 categories: ["site", "words"]
+image: "/images/neighborhood-intro.gif"
 ---
 
 ## More On pbc.gov/neighborhood and pbcpao.gov, two of my favorite projects.

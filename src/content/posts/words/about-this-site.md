@@ -3,6 +3,7 @@ title: "About this Site"
 description: "The background of this site, with some history mixed in, and some details about the latest update to Astro.js."
 date: "Jun 13 2025"
 categories: ["site", "words"]
+image: "/images/astro.jpg"
 ---
 
 <div>

@@ -3,9 +3,18 @@ title: "Now"
 description: "Everything I'm into now whether it's a tv show, a book, a program or app, a game ... anything I would love to see get some more love or attention."
 date: "Aug 5 2025"
 categories: ["about"]
+image: "/images/now/eve.jpg"
 ---
 
 I love the idea of sharing some of what we're into, doing, enjoying, reading or just want to bring more attention to so I'm going to collect things like that right here. I'm not entirely sure whether this will be entirely transient, or whether I may occasionally save these for archiving.
+
+## September 30, 2025
+
+**Eve Online**
+
+Eve Online is one of the few space MMORPGs and it's been around for over twenty-ish years now. I played it way back in the day, and I've been on a science fiction trip lately (some of which will also show up on this page soon), so I thought I would see if my account still existed and if I could get into it. Not only were my characters all waiting for me with already developed skills, but all their ships, modules, etc. were all ready to go. One thing I like (although I imagine some don't) is that your skills are time-based, so they progress whether or not you are able to play for hours and hours.
+
+If you want to check it out, use <a href="https://www.eveonline.com/signup?invc=67a991b9-332b-4379-be38-013c5c16a43f" target="_blank">my link</a> and get a 1 million skill point boost.
 
 ## August 5, 2025
 

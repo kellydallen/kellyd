@@ -3,6 +3,7 @@ title: "About Me"
 description: "The typical background page including some random facts and links to other related information."
 date: "Jun 12 2025"
 categories: ["about"]
+image: "/images/kd-home.png"
 ---
 
 ## Hi.

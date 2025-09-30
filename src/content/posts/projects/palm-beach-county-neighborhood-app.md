@@ -3,7 +3,7 @@ title: "Case Study: Palm Beach County Neighborhood Dashboard"
 description: "One of my favorite projects, and a good example of what I can do with a bit more artistic freedom. This is a one-stop dashboard for address-specific information using a lot of the ArcGIS javascript API. It shows government representatives (federal, state, and local), voting precinct locations, police and fire departments, emergency management status, evacuation zones, flood zones, school districts and representatives, current land use, permitting authorities, and water service providers, all specific to the user's address. It also provides 40+ live traffic cam feeds laid out across the county map."
 date: "Feb 01 2025"
 categories: ["projects"]
-image: "/images/neighborhood-1.png"
+image: "/images/neighborhood-intro.gif"
 ---
 
 **Project Role**: Lead UX/UI Designer & Front-End Engineer  
